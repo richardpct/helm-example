@@ -6,7 +6,7 @@ data:
   index.html: |
     <!DOCTYPE html>
     <html>
-      <head><title>Test Helm</title></head>
+      <head><title>Helm Test</title></head>
       <body>
         <h1>{{ .Values.message }}</h1>
       </body>
