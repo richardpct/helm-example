@@ -7,7 +7,7 @@ metadata:
   annotations:
     "lbipam.cilium.io/ips": "{{ .Values.vip }}"
   name: hello-world
-  namespace: default
+  namespace: web-apps
 spec:
   ports:
   - port: 80
