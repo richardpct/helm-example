@@ -1,0 +1,5 @@
+apiVersion: v2
+name: cilium-l2
+description: cilium l2
+version: 0.1.0
+appVersion: "1.25.0"
