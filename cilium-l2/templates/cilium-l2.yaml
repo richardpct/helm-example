@@ -19,8 +19,8 @@ metadata:
   name: "blue-pool"
 spec:
   blocks:
-  - start: {{ .Value.start_ip }}
-    stop: {{ .Value.stop_ip }}
+  - start: {{ .Value.start_cilium_ip }}
+    stop: {{ .Value.stop_cilium_ip }}
   serviceSelector:
     matchLabels:
       color: blue
