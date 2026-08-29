@@ -3,9 +3,6 @@ kind: Service
 metadata:
   labels:
     app: hello-world
-    color: blue
-  annotations:
-    "lbipam.cilium.io/ips": "{{ .Values.vip }}"
   name: hello-world
   namespace: web-apps
 spec:
@@ -15,4 +12,4 @@ spec:
     targetPort: 80
   selector:
     app: {{ .Release.Name }}-nginx
-  type: LoadBalancer
+  type: ClusterIP
