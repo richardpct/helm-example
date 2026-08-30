@@ -5,7 +5,7 @@ metadata:
 spec:
   serviceSelector:
     matchLabels:
-      color: blue
+      service: web
   nodeSelector:
     matchExpressions:
       - key: node-role.kubernetes.io/control-plane
@@ -16,11 +16,11 @@ spec:
 apiVersion: "cilium.io/v2"
 kind: CiliumLoadBalancerIPPool
 metadata:
-  name: "blue-pool"
+  name: "web-pool"
 spec:
   blocks:
   - start: {{ .Values.start_cilium_vip }}
     stop: {{ .Values.stop_cilium_vip }}
   serviceSelector:
     matchLabels:
-      color: blue
+      service: web
