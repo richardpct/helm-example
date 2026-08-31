@@ -4,7 +4,7 @@ metadata:
   name: web
   namespace: web
 spec:
-  ingressClassName: traefik
+  ingressClassName: nginx
   rules:
   - host: {{ .Values.host }}
     http:
