@@ -5,6 +5,9 @@ metadata:
   namespace: web
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts: {{ .Values.host }}
+    secretName: default-tls-cert
   rules:
   - host: {{ .Values.host }}
     http:
