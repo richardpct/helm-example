@@ -20,26 +20,26 @@ spec:
               number: 80
         path: /
         pathType: Exact
-#---
-#apiVersion: networking.k8s.io/v1
-#kind: Ingress
-#metadata:
-#  name: web-traefik
-#  namespace: web
-#spec:
-#  ingressClassName: traefik
-#  tls:
-#  - hosts:
-#    - {{ .Values.host }}
-#    secretName: default-tls-cert
-#  rules:
-#  - host: {{ .Values.host }}
-#    http:
-#      paths:
-#      - backend:
-#          service:
-#            name: hello-world
-#            port:
-#              number: 80
-#        path: /
-#        pathType: Exact
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web-traefik
+  namespace: web
+spec:
+  ingressClassName: traefik
+  tls:
+  - hosts:
+    - {{ .Values.host }}
+    secretName: default-tls-cert
+  rules:
+  - host: {{ .Values.host }}
+    http:
+      paths:
+      - backend:
+          service:
+            name: hello-world
+            port:
+              number: 80
+        path: /
+        pathType: Exact
