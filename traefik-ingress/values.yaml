@@ -1,6 +1,6 @@
 deployment:
   kind: Deployment
-  replicas: 2
+  replicas: 3
 
 service:
   enabled: true
@@ -8,34 +8,32 @@ service:
 
 ports:
   web:
-    nodePort: 8080
+    nodePort: 8000
 
   websecure:
     nodePort: 8443
-    tls:
-      enabled: true
 
   traefik:
     expose:
       default: false
 
-tlsStore:
-  default:
-    defaultCertificate:
-      secretName: default-tls-cert
+#tlsStore:
+#  default:
+#    defaultCertificate:
+#      secretName: default-tls-cert
 
 ingressClass:
   enabled: true
-  isDefaultClass: true
+  #isDefaultClass: true
   name: traefik
 
-providers:
-  kubernetesIngress:
-    enabled: true
-    publishedService:
-      enabled: true
-  kubernetesCRD:
-    enabled: true
+#providers:
+#  kubernetesIngress:
+#    enabled: true
+#    publishedService:
+#      enabled: true
+#  kubernetesCRD:
+#    enabled: true
 
 logs:
   general:
