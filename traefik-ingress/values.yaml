@@ -1,6 +1,11 @@
 deployment:
   kind: DaemonSet
 
+podDisruptionBudget:
+  enabled: false
+  maxUnavailable: 1
+  minAvailable: 1
+
 hostNetwork: true
 
 service:
