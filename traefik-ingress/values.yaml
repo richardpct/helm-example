@@ -9,10 +9,10 @@ service:
 
 ports:
   web:
-    nodePort: 8080
+    nodePort: 30080
 
   websecure:
-    nodePort: 8443
+    nodePort: 30443
 
   traefik:
     expose:
