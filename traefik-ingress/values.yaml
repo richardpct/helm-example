@@ -1,18 +1,25 @@
 deployment:
-  kind: Deployment
-  replicas: 3
+  kind: DaemonSet
+
+hostNetwork: true
 
 service:
   enabled: true
-  spec:
-    type: NodePort
 
 ports:
   web:
-    nodePort: 30080
+    port: 8000
+    exposedPort: 8000
+    expose:
+      default: true
 
   websecure:
-    nodePort: 30443
+    port: 8443
+    exposedPort: 8443
+    expose:
+      default: true
+    tls:
+      enabled: true
 
   traefik:
     expose:
