@@ -2,8 +2,7 @@ expose:
   type: ingress
   tls:
     enable: true
-    secret:
-      secretName: "default-tls-cert"
+    certSource: none
   ingress:
     hosts:
       core: registry.unixworld.io
