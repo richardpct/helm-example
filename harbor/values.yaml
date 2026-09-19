@@ -6,9 +6,5 @@ expose:
   ingress:
     hosts:
       core: registry.unixworld.io
-persistence:
-  enabled: true
-  persistentVolumeClaim:
-    jobservice:
-      jobLog:
-        accessMode: ReadWriteMany
+jobservice:
+  replicas: 1
