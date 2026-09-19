@@ -9,8 +9,18 @@ expose:
 persistence:
   enabled: true
   persistentVolumeClaim:
+    registry:
+      accessMode: ReadWriteMany
+      size: 5Gi
     jobservice:
       jobLog:
-        storageClass: "csi-cephfs-sc"
         accessMode: ReadWriteMany
-        size: 2Gi
+        size: 1Gi
+portal:
+  replicas: 3
+core:
+  replicas: 3
+jobservice:
+  replicas: 2
+registry:
+  replicas: 3
