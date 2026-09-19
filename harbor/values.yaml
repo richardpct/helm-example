@@ -6,5 +6,9 @@ expose:
   ingress:
     hosts:
       core: registry.unixworld.io
-jobservice:
-  replicas: 1
+  persistentVolumeClaim:
+    jobservice:
+      jobLog:
+        storageClass: "csi-cephfs-sc"
+        accessMode: ReadWriteMany
+        size: 1Gi
