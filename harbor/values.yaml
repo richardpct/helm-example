@@ -11,4 +11,4 @@ persistentVolumeClaim:
     jobLog:
       storageClass: "csi-cephfs-sc"
       accessMode: ReadWriteMany
-      size: 1Gi
+      size: 2Gi
