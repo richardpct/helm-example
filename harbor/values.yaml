@@ -1,0 +1,26 @@
+expose:
+  type: ingress
+  tls:
+    enable: true
+    certSource: none
+  ingress:
+    hosts:
+      core: registry.unixworld.io
+persistence:
+  enabled: true
+  persistentVolumeClaim:
+    registry:
+      accessMode: ReadWriteMany
+      size: 5Gi
+    jobservice:
+      jobLog:
+        accessMode: ReadWriteMany
+        size: 1Gi
+portal:
+  replicas: 3
+core:
+  replicas: 3
+jobservice:
+  replicas: 2
+registry:
+  replicas: 3
