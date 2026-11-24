@@ -23,6 +23,7 @@ storageClass:
   # Specifies whether the Storage class should be created
   create: true
   name: csi-cephfs-sc
+  mounter: fuse
   # Annotations for the storage class
   annotations:
     storageclass.kubernetes.io/is-default-class: "true"
